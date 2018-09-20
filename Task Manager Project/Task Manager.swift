@@ -27,7 +27,7 @@ class managerMenu {
     }
     
     func validateInput(_ input: String) -> Bool {
-        let validMenuOptions = Array(1...8)
+        let validMenuOptions = Array(1...10)
         guard let number = Int(input) else {
             return false
         }
@@ -37,16 +37,18 @@ class managerMenu {
     func printMenu() { //Lists the options for the user to select.
         print("""
 Select an Option:
-        * Add Task
-        * Remove Task
-        * List All Tasks
-        * List Unfinished Tasks
-        * List Finished Tasks
-        * Mark A Task as Complete
-        * Mark A Complete Task as Uncomplete
-        * Quit
+        1) Add Task
+        2) Remove Task
+        3) List All Tasks
+        4) List Unfinished Tasks
+        5) List Finished Tasks
+        6) Mark A Task as Complete
+        7) Mark A Complete Task as Uncomplete
+        8) Mark A Task as Priority
+        9) Quit
+        10) ...
 
-        Select 1-8
+        Select 1-10
 """)
         
     }
@@ -54,29 +56,35 @@ Select an Option:
     func handleInput(_ input: String) { //Allows the user to select a specfic option.
         switch input {
         case "1":
-        //call the library's add task function
+            //call the library's add task function
             taskManager.createTask()
         case "2":
-        //Call the library's remove task function.
+            //Call the library's remove task function.
             taskManager.removeTask()
         case "3":
-        //List all tasks
+            //List all tasks
             taskManager.listAllTasks()
         case "4":
-        //List unfinished tasks
+            //List unfinished tasks
             taskManager.listUnfinishedTasks()
         case "5":
-        //List finished tasks
-           taskManager.listCompleteTasks()
+            //List finished tasks
+            taskManager.listCompleteTasks()
         case "6":
-        //Mark A Task as Complete
+            //Mark A Task as Complete
             taskManager.markTaskComplete()
         case "7":
             //Mark A Complete Task as Uncomplete
             taskManager.markTaskUncomplete()
         case "8":
+            //Marks a task as priority
+            taskManager.markAsPriority()
+        case "9":
             //quit
             quit()
+        case "10":
+            //help ;)
+            taskManager.help()
         default:
             break
         }
@@ -87,6 +95,7 @@ Select an Option:
         //This function will be called when the user is ready to quit the app.
         shouldQuit = true
         //Show user a message.
+        print("It is dangerous to go alone!")
         print("Thanks for using the Task Manager!")
     }
     

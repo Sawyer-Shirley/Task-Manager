@@ -8,13 +8,14 @@
 
 import Foundation
 
-//This file holds the File class.
+//This file holds the Task class and all of its information.
 
 class Task {
-    let name: String
-    let taskDetails: String
-    var completed: Bool = false
-    var completeBy: Date?
+    var name: String //The name of the task
+    var taskDetails: String //The description of the task
+    var completed: Bool = false //If the task is completed, automatically set to false
+    var completeBy: Date? //The complete by date.
+    var priority: Bool = false //If the task is set as a priority task, normally set to false. This places the task at the top of all list functions and adds an * at the begining of it to make it stand apart.
     
     init(name: String, taskDetails: String) {
         self.name = name
