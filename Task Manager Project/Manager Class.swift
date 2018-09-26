@@ -16,13 +16,18 @@ class Manager {
     func listUnfinishedTasks() {
         print("Unfinished Tasks:\n")
         for task in arrayOfTasks {
+            if task.completed == false {
             if task.priority == true {
                 print("- \(task.name)")
             }
         }
+        }
+            
         for task in arrayOfTasks{
+            if task.completed == false {
             if task.priority == false {
                 print("- \(task.name)")
+            }
             }
             
             if let completeBy = task.completeBy {
@@ -35,7 +40,7 @@ class Manager {
         print("Returning to menu...\n")
         sleep(1)
     }
- 
+    
     
     //Allows user to mark a task as complete.
     func markTaskComplete() {
@@ -63,7 +68,7 @@ class Manager {
         print("Returning to the menu...\n")
         sleep(1)
     }
-
+    
     
     //Allows a user to check out a game.
     func markTaskUncomplete() {
@@ -100,7 +105,7 @@ class Manager {
         print("Returning to the menu...\n")
         sleep(1)
     }
-
+    
     
     //Allows a user to remove a selected task.
     func removeTask() {
@@ -126,7 +131,7 @@ class Manager {
         print("Returning to the menu...\n")
         sleep(1)
     }
-   
+    
     
     //Allows a user to add a new task.
     func createTask() {
@@ -171,7 +176,7 @@ class Manager {
         print("Returning to the menu...\n")
         sleep(1)
     }
-
+    
     
     //Lists all complete tasks for the user.
     func listCompleteTasks() {
@@ -179,20 +184,25 @@ class Manager {
         sleep(1)
         print("Complete Tasks:\n")
         for task in arrayOfTasks {
-            if task.priority == true {
-                print("- \(task.name)")
+            if task.completed {
+                if task.priority == true {
+                    print("- \(task.name)")
+                }
             }
+            
         }
-        for task in arrayOfTasks{
-            if task.priority == false {
-                print("- \(task.name)")
+        for task in arrayOfTasks {
+            if task.completed {
+                if task.priority == false {
+                    print("- \(task.name)")
+                }
             }
         }
         sleep(1)
         print("Returning to the menu...\n")
         sleep(1)
+        
     }
-    
     
     //Lists all tasks, completed and uncomplete.
     func listAllTasks() {

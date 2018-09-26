@@ -46,9 +46,9 @@ Select an Option:
         7) Mark A Complete Task as Uncomplete
         8) Mark A Task as Priority
         9) Quit
-        10) ...
+            ...
 
-        Select 1-10
+        Select 1-9
 """)
         
     }
